@@ -5,12 +5,51 @@
   </head>
   <body class="container">
 
-    <button style="font-size: 50px; margin-left: 30%; background-color:white;" id="complimentButton">Get a compliment</button> &emsp;
-    <button style="font-size: 50px; background-color:white;" id="fortuneButton">Get A Fortune</button>&emsp;
-    <input style="font-size: 50px; background-color:white;" type="button" onclick="tend()" value="open me">&emsp;
-    <input style="font-size: 50px; background-color:white;" type="button" onclick="tn()" value="close">&emsp;
+    <button style="font-size: 30px; margin-left: 0%; background-color:white;" id="complimentButton">Get a compliment</button> 
+    <button style="font-size: 30px; background-color:white;" id="fortuneButton">Get A Fortune</button>
+    <input style="font-size: 30px; background-color:white;" type="button" onclick="tend()" value="open me">
+    <input style="font-size: 30px; background-color:white;" type="button" onclick="tn()" value="close">
+    
+    <input style="font-size: 25px;" id="searchbar" onkeyup="search_char()" type="text"
+        name="search" placeholder="Search Characters ..">
+       
     </div>
-    <img src ="https://ih1.redbubble.net/image.455931241.3291/st,small,845x845-pad,1000x1000,f8f8f8.jpg" id="my" width="1000" height="1000" style="position: absolute; top:92px; left:33%; visibility:hidden"/>
+    <ol style="margin-left: 0%; font-size: 30px;" id='list'>
+      <li><a class="characters" href="https://swapi.dev/api/people/1/"> Luke Skywalker </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/2/"> C-3PO </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/3/"> R2-D2 </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/4/"> Darth Vader </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/5/"> Leia Organa </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/10/"> Obi-Wan Kenobi </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/9/"> Biggs Darklighter </a></li>
+      <li><a class="characters" href="https://swapi.dev/api/people/8/"> R5-D4 </a></li>
+  </ol>
+   
+<ul id="list"></ul>
+ <label style="font-size: 30px;">Add More StarWars Characters</label>
+<input type="text" id="candidate" />
+<button style="font-size: 20px;" onclick="addname()" class="buttonClass">Add</button>
+<button style="font-size: 20px;" onclick="removeItem()" class="buttonClass">Remove</button>
+
+<script>
+    function addname() {
+        var a = document.getElementById("list")
+        var candidate = document.getElementById("candidate")
+        var li = document.createElement("li")
+        li.setAttribute('id', candidate.value)
+        li.appendChild(document.createTextNode(candidate.value))
+        a.appendChild(li)
+    }
+
+    function removeItem() {
+        var a = document.getElementById("list");
+        var candidate = document.getElementById("candidate")
+        var item = document.getElementById(candidate.value)
+        a.removeChild(item)
+    }
+</script>
+
+<img src ="https://imgs.smoothradio.com/images/191589?crop=16_9&width=660&relax=1&signature=Rz93ikqcAz7BcX6SKiEC94zJnqo=" id="my" width="1000" height="1000" style="position: absolute; top:92px; left:33%; visibility:hidden"/>
     <script type="text/javascript">
       function tend() {
         document.getElementById('my').style.visibility='visible';
@@ -19,44 +58,7 @@
         document.getElementById('my').style.visibility='hidden';
       }
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height:100%;
-}
-.parallax {
-
-  background-image: url("https://images.unsplash.com/photo-1508558936510-0af1e3cccbab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW5zcGlyYXRpb25hbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60");
-
-  height: 30%; 
-
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
-<body>
-
-<div class="parallax"></div>
-
-<div style="height:300px;background-color: lightcoral;font-size:50px">
-  “Circumstances may cause interruptions and delays, but never lose sight of your goal. Prepare yourself in every way you can by increasing your knowledge and adding to your experience, so that you can make the most of opportunity when it occurs.” — Mario Andretti
-</div>
-
-<div class="parallax"></div>
-
-<div style="height:300px;background-color:lightcoral;font-size:50px">
-  “We do not develop anything with one giant step. No matter who you are, or what you do, each one of us had had to take a lot of individual steps to accomplish a task, a job, a career, or even a hobby.” — Catherine Pulsifer
-</div>
-
-<div class="parallax"></div>
-
-<div style="height:300px;background-color:lightcoral;font-size:50px;">
-  “Focused, hard work is the real key to success. Keep your eyes on the goal, and just keep taking the next step towards completing it. If you aren't sure which way to do something, do it both ways and see which works better.” — John Carmack
-</div>
-
-<div class="parallax"></div>
+   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     

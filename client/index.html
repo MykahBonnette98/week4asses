@@ -3,18 +3,21 @@
   <head>
     <title>Back End Assessment</title>
   </head>
-  <body class="container">
+  <h1>BACK END ASSESSMENT</h1>
+  <body style="background-color:black; color: yellow; text-align: center;" class="container">
 
-    <button style="font-size: 30px; margin-left: 0%; background-color:white;" id="complimentButton">Get a compliment</button> 
-    <button style="font-size: 30px; background-color:white;" id="fortuneButton">Get A Fortune</button>
-    <input style="font-size: 30px; background-color:white;" type="button" onclick="tend()" value="open me">
-    <input style="font-size: 30px; background-color:white;" type="button" onclick="tn()" value="close">
+    <button style="font-size: 30px; margin-left: 0%; background-color:yellow;" id="complimentButton">Get a compliment</button> 
+    <button style="font-size: 30px; background-color:yellow;" id="fortuneButton">Get A Fortune</button>
+    <input style="font-size: 30px; background-color:yellow;" type="button" onclick="tend()" value="open me">
+    <input style="font-size: 30px; background-color:yellow;" type="button" onclick="tn()" value="close">
     
+    <button style="font-size: 30px; background-color:yellow;" id="ageButton">Get your age if you lived on another planet</button>
+
     <input style="font-size: 25px;" id="searchbar" onkeyup="search_char()" type="text"
         name="search" placeholder="Search Characters ..">
        
     </div>
-    <ol style="margin-left: 0%; font-size: 30px;" id='list'>
+    <li style="margin-left: 0%; font-size: 30px;" id='list'>
       <li><a class="characters" href="https://swapi.dev/api/people/1/"> Luke Skywalker </a></li>
       <li><a class="characters" href="https://swapi.dev/api/people/2/"> C-3PO </a></li>
       <li><a class="characters" href="https://swapi.dev/api/people/3/"> R2-D2 </a></li>
@@ -23,7 +26,23 @@
       <li><a class="characters" href="https://swapi.dev/api/people/10/"> Obi-Wan Kenobi </a></li>
       <li><a class="characters" href="https://swapi.dev/api/people/9/"> Biggs Darklighter </a></li>
       <li><a class="characters" href="https://swapi.dev/api/people/8/"> R5-D4 </a></li>
-  </ol>
+    </li>
+  <label for="name">Enter Name</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+      <div>
+        <label for="nameDel">Delete</label>
+        <form id="delForm">
+        <input type="text" name="nameDel" id="delName" required>
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </form>
+        
+     
    
 <ul id="list"></ul>
  <label style="font-size: 30px;">Add More StarWars Characters</label>
@@ -48,6 +67,7 @@
         a.removeChild(item)
     }
 </script>
+
 
 <img src ="https://imgs.smoothradio.com/images/191589?crop=16_9&width=660&relax=1&signature=Rz93ikqcAz7BcX6SKiEC94zJnqo=" id="my" width="1000" height="1000" style="position: absolute; top:92px; left:33%; visibility:hidden"/>
     <script type="text/javascript">
